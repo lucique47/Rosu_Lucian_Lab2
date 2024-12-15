@@ -5,8 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<Rosu_Lucian_Lab2Context>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Rosu_Lucian_Lab2Context") ?? throw new InvalidOperationException("Connection string 'Rosu_Lucian_Lab2Context' not found.")));
+builder.Services.AddDbContext<Rosu_Lucian_Lab2Context>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Rosu_Lucian_Lab2Context") ?? throw new InvalidOperationException("Connection string 'Rosu_Lucian_Lab2Context' not found.")));
 
 var app = builder.Build();
 
