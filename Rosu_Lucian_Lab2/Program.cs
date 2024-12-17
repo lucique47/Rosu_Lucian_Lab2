@@ -13,8 +13,9 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("Rosu_Lucian_Lab2
 string 'Rosu_Lucian_Lab2Context' not found.")));
 builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 options.SignIn.RequireConfirmedAccount = true)
- .AddEntityFrameworkStores<LibraryIdentityContext>();
-var app = builder.Build();
+ .AddEntityFrameworkStores<LibraryIdentityContext>()
+ .AddRoles<IdentityRole>()
+ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
